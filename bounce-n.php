@@ -14,6 +14,7 @@
  */
  
 include 'class.holiday.secretapi.php';
+include 'hsl-rgb-functions.php';
 
 $delay = 50000;
 
