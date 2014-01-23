@@ -1,5 +1,5 @@
-+<?php
-+/**
+<?php
+/**
 + * Colo[u]r space transformations for Holiday by Moorescloud
 + *
 + * shameless stolen from http://axonflux.com/handy-rgb-to-hsl-and-rgb-to-hsv-color-model-c
