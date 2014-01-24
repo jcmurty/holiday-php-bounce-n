@@ -41,7 +41,7 @@ while (true) {
 		$holiday->fill(0,0,0);
 		$holiday->render();
 	}
-	$state = ! $state
+	$state = ! $state;
 }
 	
 ?>
