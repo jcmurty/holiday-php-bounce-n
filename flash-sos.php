@@ -44,4 +44,4 @@ while (true) {
 	$state = ! $state
 }
 	
-// slow flash
+?>
