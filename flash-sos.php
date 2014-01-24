@@ -12,8 +12,8 @@
  
 include 'class.holiday.secretapi.php';
 
-$shortdelay = 100000;
-$longdelay = 300000;
+$shortdelay = 1000000;
+$longdelay = 3000000;
 
 // Need to pass the IP address or hostname of the Holiday on the command-line
 
@@ -23,19 +23,21 @@ $holiday->render();
 
 $r = 240; $g = 0; $b = 0;
 
-$state = 0;
+$state = 1;
 
 while (true) {
 
 // fast flash
 
-	for ( $i=0 ; $i < 3 ; $i++) {
+	for ( $i = 0 ; $i < 3 ; $i++) {
 		$holiday->fill($r, $g, $b);
 		$holiday->render();
 		if ( $state ) {
+				echo "blip";
 				usleep($shortdelay);
 		}
 		else {
+				echo "beep";
 				usleep($longdelay);
 		}
 		$holiday->fill(0,0,0);
