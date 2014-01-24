@@ -4,9 +4,7 @@
  * flash SOS on a Holiday string
  * 
  * @author James Murty <james@murty.org>
- * @version 1.0.0
  * @version 1.0
- * @copyright 2013 Avi Miller
  * @license MIT
  
  * from http://en.wikipedia.org/wiki/Morse_code
@@ -21,14 +19,11 @@
  
 include 'class.holiday.secretapi.php';
 
-$shortdelay = 1000000;
-$longdelay = 3000000;
-
 // Need to pass the IP address or hostname of the Holiday on the command-line
 
-$message = (".",".",".","|","-","-","-","|",".",".",".");
+$message = array(".",".",".","|","-","-","-","|",".",".",".");
 
-$unit=100000;
+$unit=200000;
 
 $holiday = new HolidaySecretAPI($argv[1]);  
 $holiday->fill(0,0,0);
@@ -46,6 +41,7 @@ while (true) {
 				usleep($unit);
 				$holiday->fill(0,0,0);
 				$holiday->render();
+				usleep($unit);
 				break;
 			case "-":
 				echo "-";
@@ -54,6 +50,7 @@ while (true) {
 				usleep($unit*3);
 				$holiday->fill(0,0,0);
 				$holiday->render();
+				usleep($unit);
 				break;
 			case "|":
 				echo "|";
@@ -61,11 +58,12 @@ while (true) {
 				break;
 			case " ";
 				echo " ";
-				usleep($unit*7)
+				usleep($unit*7);
 				break;
 		}
 	}
 	// gap between words
+	echo " ";
 	usleep($unit*7);
 }
 	
